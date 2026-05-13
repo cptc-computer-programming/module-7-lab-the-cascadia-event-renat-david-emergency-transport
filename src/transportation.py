@@ -18,6 +18,15 @@ district_1 = input("Enter the name of District 1: ")
 district_2 = input("Enter the name of District 2: ")
 # TODO: For each district, process all routes.
 
+dist_1_rte_time_list = []
+
+for i in range(1, ROUTE_COUNT + 1):
+    dist_1_rte_time = int(input(f"Enter the travel time ({MIN_TRAVEL_TIME}-{MAX_TRAVEL_TIME}) for Route {i} in {district_1}: "))
+    dist_1_rte_time_list.append(dist_1_rte_time)
+
+while dist_1_rte_time < MIN_TRAVEL_TIME or dist_1_rte_time > MAX_TRAVEL_TIME:
+    print(f"Invalid input. Travel time must be between {MIN_TRAVEL_TIME} and {MAX_TRAVEL_TIME} minutes.")
+    dist_1_rte_time = int(input(f"Enter the travel time ({MIN_TRAVEL_TIME}-{MAX_TRAVEL_TIME}) for Route 1 in {district_1}: "))
 
 #ROUTE 1 DATA FOR DISTRICT 1
 dist_1_rte_1_time = int(input(f"Enter the travel time ({MIN_TRAVEL_TIME}-{MAX_TRAVEL_TIME}) for Route 1 in {district_1}: "))
@@ -91,5 +100,47 @@ dist_1_efficiency = (dist_1_rte_1_vehicles + dist_1_rte_2_vehicles + dist_1_rte_
 
 
 # TODO: Calculate and display route-level and district-level results.
+print(f"*** District 1: {district_1} ***")
+print("--- Route 1 ---")
+print(f"Travel Time: {dist_1_rte_1_time} minutes")
+print(f"Distance traveled: {dist_1_rte_1_distance} miles")
+print(f"Number of Vehicles: {dist_1_rte_1_vehicles}")
+print(f"Average Speed: {dist_1_rte_1_avg_speed:.2f} mph")
+print("--- Route 2 ---")
+print(f"Travel Time: {dist_1_rte_2_time} minutes")
+print(f"Distance traveled: {dist_1_rte_2_distance} miles")
+print(f"Number of Vehicles: {dist_1_rte_2_vehicles}")
+print(f"Average Speed: {dist_1_rte_2_avg_speed:.2f} mph")
+print("--- Route 3 ---")
+print(f"Travel Time: {dist_1_rte_3_time} minutes")
+print(f"Distance traveled: {dist_1_rte_3_distance} miles")
+print(f"Number of Vehicles: {dist_1_rte_3_vehicles}")
+print(f"Average Speed: {dist_1_rte_3_avg_speed:.2f} mph")
+print(f"*** District 1 Summary ***")
+print(f"Average Evacuation Time: {dist_1_avg_evac_time} minutes")
+print(f"Average Distance: {dist_1_avg_distance} miles")
+print(f"Evacuation Efficiency: {dist_1_efficiency} vehicles per minute")
 
+# district 2
+print(f"*** District 2: {district_2} ***")
+print("--- Route 1 ---")
+print(f"Travel Time: {dist_2_rte_1_time} minutes")
+print(f"Distance traveled: {dist_2_rte_1_distance} miles")
+print(f"Number of Vehicles: {dist_2_rte_1_vehicles}")
+print(f"Average Speed: {dist_2_rte_1_avg_speed:.2f} mph")
+print("--- Route 2 ---")
+print(f"Travel Time: {dist_2_rte_2_time} minutes")
+print(f"Distance traveled: {dist_2_rte_2_distance} miles")
+print(f"Number of Vehicles: {dist_2_rte_2_vehicles}")
+print(f"Average Speed: {dist_2_rte_2_avg_speed:.2f} mph")
+print("--- Route 3 ---")
+print(f"Travel Time: {dist_2_rte_3_time} minutes")
+print(f"Distance traveled: {dist_2_rte_3_distance} miles")
+print(f"Number of Vehicles: {dist_2_rte_3_vehicles}")
+print(f"Average Speed: {dist_2_rte_3_avg_speed:.2f} mph")
+print(f"*** District 2 Summary ***")
+print(f"Average Evacuation Time: {dist_2_avg_evac_time} minutes")
+print(f"Average Distance: {dist_2_avg_distance} miles")
+print(f"Evacuation Efficiency: {dist_2_efficiency} vehicles per minute")
 # TODO: Print a final completion message.
+print("Transportation data processing complete, Thank you for using The Emergency Moon Tea Service's")
