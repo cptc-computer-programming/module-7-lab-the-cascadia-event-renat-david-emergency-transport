@@ -61,14 +61,14 @@ for district in range(1, DISTRICT_COUNT + 1):
     dist_1_avg_distance = (sum(rte_distance_list)) / ROUTE_COUNT
     dist_1_efficiency = (sum(rte_vehicles_list)) / (sum(rte_time_list))
 
+    print(f"--- Route {rte} ---")
+    print(f"Travel Time: {rte_time_list[rte - 1]} minutes")
+    print(f"Distance traveled: {rte_distance_list[rte - 1]} miles")
+    print(f"Number of Vehicles: {rte_vehicles_list[rte - 1]}"))
+    print(f"Average Speed: {rte_avg_speed_list[rte - 1]:.2f} mph")
 
     # Display route results for District 1 using a for loop to iterate through the route data lists.
-    for i in range(1, ROUTE_COUNT + 1):
-        print(f"--- Route {i} ---")
-        print(f"Travel Time: {rte_time_list[i - 1]} minutes")
-        print(f"Distance traveled: {rte_distance_list[i - 1]} miles")
-        print(f"Number of Vehicles: {rte_vehicles_list[i - 1]}")
-        print(f"Average Speed: {rte_avg_speed_list[i - 1]:.2f} mph")
+    
     print(f"*** District {district} Summary ***")
     print(f"Average Evacuation Time: {dist_1_avg_evac_time} minutes")
     print(f"Average Distance: {dist_1_avg_distance} miles")
