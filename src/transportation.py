@@ -18,6 +18,7 @@ district_1 = input("Enter the name of District 1: ")
 district_2 = input("Enter the name of District 2: ")
 # TODO: For each district, process all routes.
 
+
 #ROUTE 1 DATA FOR DISTRICT 1
 dist_1_rte_1_time = int(input(f"Enter the travel time ({MIN_TRAVEL_TIME}-{MAX_TRAVEL_TIME}) for Route 1 in {district_1}: "))
 
@@ -36,6 +37,9 @@ dist_1_rte_1_vehicles = int(input(f"Enter the number of vehicles for Route 1 in 
 while dist_1_rte_1_vehicles < MIN_VEHICLES:
     print(f"Invalid input. Number of vehicles must be at least {MIN_VEHICLES}.")
     dist_1_rte_1_vehicles = int(input(f"Enter the number of vehicles for Route 1 in {district_1}: "))
+
+dist_1_rte_1_avg_speed = dist_1_rte_1_distance / (dist_1_rte_1_time / MINUTES_PER_HOUR)
+
 
 #ROUTE 2 DATA FOR DISTRICT 1
 dist_1_rte_2_time = int(input(f"Enter the travel time ({MIN_TRAVEL_TIME}-{MAX_TRAVEL_TIME}) for Route 2 in {district_1}: "))
@@ -56,6 +60,8 @@ while dist_1_rte_2_vehicles < MIN_VEHICLES:
     print(f"Invalid input. Number of vehicles must be at least {MIN_VEHICLES}.")
     dist_1_rte_2_vehicles = int(input(f"Enter the number of vehicles for Route 2 in {district_1}: "))
 
+dist_1_rte_2_avg_speed = dist_1_rte_2_distance / (dist_1_rte_2_time / MINUTES_PER_HOUR)
+
 #ROUTE 3 DATA FOR DISTRICT 1
 dist_1_rte_3_time = int(input(f"Enter the travel time ({MIN_TRAVEL_TIME}-{MAX_TRAVEL_TIME}) for Route 3 in {district_1}: "))
 
@@ -75,8 +81,14 @@ while dist_1_rte_3_vehicles < MIN_VEHICLES:
     print(f"Invalid input. Number of vehicles must be at least {MIN_VEHICLES}.")
     dist_1_rte_3_vehicles = int(input(f"Enter the number of vehicles for Route 3 in {district_1}: "))
 
+dist_1_rte_3_avg_speed = dist_1_rte_3_distance / (dist_1_rte_3_time / MINUTES_PER_HOUR)
 
-# TODO: Validate all user input.
+#misc data (temporary)
+dist_1_avg_evac_time = (dist_1_rte_1_time + dist_1_rte_2_time + dist_1_rte_3_time) / ROUTE_COUNT
+dist_1_avg_distance = (dist_1_rte_1_distance + dist_1_rte_2_distance + dist_1_rte_3_distance) / ROUTE_COUNT
+dist_1_efficiency = (dist_1_rte_1_vehicles + dist_1_rte_2_vehicles + dist_1_rte_3_vehicles) / (dist_1_rte_1_time + dist_1_rte_2_time + dist_1_rte_3_time)
+
+
 
 # TODO: Calculate and display route-level and district-level results.
 
